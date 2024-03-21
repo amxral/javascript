@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <title>JavaScript</title>
+    <style>
+        body {
+            font-size: 1.5em;
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 30px;
+            background-color: rgb(200, 142, 255);
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        var nome = window.prompt('Qual é seu nome?')
+        document.write(`Olá, <strong>${nome}</strong>! Seu nome tem ${nome.length} letras.</br>`)
+        document.write(`Assim fica seu nome em minúsculo: ${nome.toLowerCase()}</br>`)
+        document.write(`Assim fica seu nome em maiúsculo: ${nome.toUpperCase()}`)
+    </script>
+</body>
+</html>

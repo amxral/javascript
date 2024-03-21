@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <style>
+        div#btn {
+            background-color: rgb(89, 28, 147);
+            color: white;
+            font: bold 2em arial;
+            width: 300px;
+            height: 300px;
+            line-height: 300px;
+            text-align: center;
+            margin: auto;
+            border-radius: 50px;
+            box-shadow: 10px 7px 0px rgb(0, 0, 0);
+            border: 2px solid black;
+        }
+    </style>
+    <title>Eventos DOM</title>
+</head>
+<body>
+
+    <!-- EVENTOS DOM DENTRO DO HTML -->
+
+    <div id="btn" onclick="clicar()" onmousedown="clicou()" onmouseup="saiuClick()" onmouseenter="entrou()" onmouseout="saiu()">
+        Clique-me
+    </div>
+
+    <!-- JAVASCRIPT -->
+
+    <SCript>
+        var area = document.getElementById('btn')
+
+        function clicar() {
+            area.innerText = 'Clicou!'
+            area.style.backgroundColor = 'darkblue'
+        }
+
+        function entrou() {
+            area.innerText = 'Entrou! rs'
+            area.style.backgroundColor = 'darkred'
+        }
+
+        function saiu() {
+            area.innerText = 'Saiu!'
+            area.style.backgroundColor = 'rgb(89, 28, 147)'
+        }
+
+        function clicou() {
+            area.style.backgroundColor = 'darkblue'
+        }
+
+        function saiuClick() {
+            area.style.backgroundColor = 'rgb(89, 28, 147)'
+        }
+    </SCript>
+</body>
+</html>

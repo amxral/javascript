@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <style>
+        @media screen and (max-width: 770px){
+            input {
+                display: inline-block;
+                height: 40px;
+                width: 100%;
+                text-align: center;
+                font-size: 1.3em;
+                margin-bottom: 10px;
+            }
+            input#n1 {
+            width: 96%;
+            border-radius: 10px;
+            font-size: 1.5em;
+            }
+            #res {
+                font-size: 1.5em
+            }
+        }
+        body {
+            position: relative;
+            font: normal 1em arial;
+            background: lightgray url(back-cal.jpg) center no-repeat fixed;
+            background-size: cover;
+        }
+        div#cal {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, 50%);
+
+            padding: 20px;
+            border: 2px solid black;
+            border-radius: 20px;
+            background-color: white;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.361);
+        }
+        input.cxsoma {
+            width: 100px;
+            border-radius: 10px;
+        }
+        input#btn {
+            border-radius: 10px;
+        }
+        #res {
+            margin-top: 20px;
+        }
+        mark {
+            background-color: rgb(47, 241, 47);
+            padding-left: 2px;
+            padding-right: 2px;
+        }
+    </style>
+    <title>Somando Valores</title>
+</head>
+<body>
+    <div id="cal">
+        <h1>Transformando Minutos em Segundos</h1>
+        <input type="number" name="n1" id="n1" class="cxsoma" required min="0">
+        <input type="button" value="Calcular" onclick="somar()" id="btn">
+        <div id="res">Resultado</div>
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script>
+       
+       function somar() { 
+        var n1 = document.getElementById('n1')
+        var res = document.getElementById('res')
+
+        var n1 = Number(n1.value)
+
+
+        var soma = n1 * 60
+        var soma = Number.parseFloat(soma)
+        
+        if (n1 == 0) {
+            res.innerHTML = `Insira um valor diferente de <mark>0</mark>`
+        }
+        else {
+        res.innerHTML = `${n1}min convertido em segundos é igual a: <mark><strong>${soma} segundos</strong></mark>`
+        }
+    }
+    </script>
+
+</body>
+</html>

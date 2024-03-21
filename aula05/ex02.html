@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <title>Nacionalidade</title>
+</head>
+<body>
+    <h1>Pa gringo é mais caro</h1>
+    <label for="pais">Qual país você nasceu?</label>
+    <input type="text" name="pais" id="pais">
+    <input type="submit" value="Enviar" onclick="enviou()">
+    <div id="res">
+
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        function enviou() {
+            var pais = document.querySelector('input#pais').value.toLowerCase()
+            var res = document.querySelector('div#res')
+
+            res.innerHTML = `<p>Se você nasceu em ${pais}</p>`
+
+            if (pais !== 'brasil') {
+                res.innerHTML += `<p>Infelizmente você é gringo</p>`
+            } else {
+                res.innerHTML += `<p>Você é Brasileiro! &#127463;&#127479;</p>`
+            }
+        }
+    </script>
+
+</body>
+</html>

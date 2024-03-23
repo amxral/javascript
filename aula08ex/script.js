@@ -14,7 +14,7 @@ function verificar() {
         img.setAttribute('id', 'foto')
         if (sex[0].checked) {
             gen = 'Homem'
-            if (idade >= 1 && idade < 12) {
+            if (idade >= 0 && idade < 12) {
                 //criança
                 img.setAttribute('src', 'images/menino.png')
             } else if (idade < 25) {
@@ -29,7 +29,7 @@ function verificar() {
             }
         } else if (sex[1].checked){
             gen = 'Mulher'
-            if (idade >= 1 && idade < 12) {
+            if (idade >= 0 && idade < 12) {
                 //criança
                 img.setAttribute('src', 'images/menina.png')
             } else if (idade < 25) {

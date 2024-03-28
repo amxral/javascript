@@ -6,6 +6,16 @@
     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
     <style>
         @media screen and (max-width: 770px){
+            body {
+                font-size: 0.5em;
+            }
+            div#cal {
+            width: 80%;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, 50%);
+            }
             input {
                 display: inline-block;
                 height: 40px;
@@ -17,29 +27,29 @@
             input#n1 {
             width: 96%;
             border-radius: 10px;
-            font-size: 1.5em;
+            font-size: 1em;
             }
             #res {
-                font-size: 1.5em
+                font-size: 1em
             }
         }
         body {
             position: relative;
             font: normal 1em arial;
-            background: lightgray url(back-cal.jpg) center no-repeat fixed;
-            background-size: cover;
+            background-color: grey;
         }
         div#cal {
             position: absolute;
             left: 50%;
             top: 50%;
-            transform: translate(-50%, 50%);
+            transform: translate(-50%, 10%);
 
             padding: 20px;
             border: 2px solid black;
             border-radius: 20px;
             background-color: white;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.361);
+            
         }
         input.cxsoma {
             width: 100px;
@@ -57,34 +67,49 @@
             padding-right: 2px;
         }
     </style>
-    <title>Somando Valores</title>
+    <title>Conversor de Medidas</title>
 </head>
 <body>
     <div id="cal">
-        <h1>Transformando Minutos em Segundos</h1>
+        <h1>Conversor de Medidas</h1>
+        <p>Digite uma distância em metros(m)</p>
         <input type="number" name="n1" id="n1" class="cxsoma" required min="0">
         <input type="button" value="Calcular" onclick="somar()" id="btn">
         <div id="res">Resultado</div>
     </div>
-    
+
     <!-- JAVASCRIPT -->
     <script>
        
        function somar() { 
-        var n1 = document.getElementById('n1')
+        var metro = document.getElementById('n1')
         var res = document.getElementById('res')
 
-        var n1 = Number(n1.value)
+        var metro = Number(metro.value)
 
-
-        var soma = n1 * 60
-        var soma = Number.parseFloat(soma)
-        
+        var km = metro * 0.001
+        var km = Number.parseFloat(km)
+        var cm = metro * 100
+        var cm = Number.parseFloat(cm)
+        var mm = metro * 1000
+        var mm = Number.parseFloat(mm)
+        var pes = metro * 3.2
+        var pes = Number.parseFloat(pes)
+        var pol = metro * 39.3
+        var pol = Number.parseFloat(pol)
         if (n1 == 0) {
             res.innerHTML = `Insira um valor diferente de <mark>0</mark>`
         }
         else {
-        res.innerHTML = `${n1}min convertido em segundos é igual a: <mark><strong>${soma} segundos</strong></mark>`
+        res.innerHTML = `${metro}(m) convertido em <strong>quilometros</strong> é igual a: <mark><strong>${km} (Km)</strong></mark><br>
+        <br>
+        ${metro}(m) convertido em <strong>centímetros</strong> é igual a: <mark><strong>${cm} (cm)</strong></mark><br>
+        <br>
+        ${metro}(m) convertido em <strong>milímetros</strong> é igual a: <mark><strong>${mm} (mm)</strong></mark><br>
+        <br>
+        ${metro}(m) convertido em <strong>pés</strong> é igual a: <mark><strong>${pes} (ft)</strong></mark><br>
+        <br>
+        ${metro}(m) convertido em <strong>polegadas</strong> é igual a: <mark><strong>${pol} (in)</strong></mark><br>`
         }
     }
     </script>

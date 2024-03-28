@@ -11,23 +11,25 @@
         button {
             font-size: 1em;
             text-align: center;
-            width: 150px;
+            width: 200px;
             height: 70px;
         }
     </style>
-    <title>Bem-Vindo</title>
+    <title>Antes e Depois</title>
 </head>
 <body>
-    <h1>Boas-vindas</h1>
-    <button onclick="clicou()">Inicie o desafio</button>
+    <h1>Antes e Depois</h1>
+    <button onclick="clicou()">Antecessor e Sucessor</button>
 
     <!-- JavaScript -->
     <script>    
         function clicou() {
             var btn = document.getElementsByTagName('button')[0]
-            var nome = prompt('Qual é o seu nome?')
-            var idade = prompt('Olá, ' + nome + '! Quantos anos você tem?')
-            alert('Acabei de conhecer ' + nome + ',  que tem ' + idade + ' anos de idade!')
+            var n1 = Number(prompt('Digite um número qualquer'))
+            var ante = n1 - 1
+            var suc = n1 + 1
+            alert(`Antes de ${n1}, temos o número ${ante}. 
+Depois de ${n1}, temos o número ${suc}.`)
         }
     </script>
 </body>

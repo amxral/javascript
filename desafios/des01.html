@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+        }
+        button {
+            width: 100px;
+            height: 70px;
+            font-size: 1em;
+        }
+    </style>
+    <title>Clique</title>
+</head>
+<body>
+    <h1>Clique em um Botão</h1>
+    <button onclick="clicou()">Botão 1</button>
+    <button onclick="clicou2()">Botão 2</button>
+    <button onclick="clicou3()">Botão 3</button>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        function clicou() {
+            var btn1 = document.getElementsByTagName('button')[0]
+            alert('Você clicou no 1º botão!')
+        }
+        function clicou2() {
+            var btn2 = document.getElementsByTagName('button')[1]
+            alert('Você clicou no 2º botão!')
+        }
+        function clicou3() {
+            var btn3 = document.getElementsByTagName('button')[2]
+            alert('Você clicou no 3º botão!')
+        }
+    </script>
+</body>
+</html>

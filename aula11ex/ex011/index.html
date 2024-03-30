@@ -3,20 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
-    <title>Exercício</title>
+    <title>Contando</title>
 </head>
 <body>
     <header>
-        <h1>Título</h1>
+        <h1>Vamos contar</h1>
     </header>
     <section>
-        <div>
-            Exemplo...
+        <div id="dados">
+            <p>Início: <input type="number" name="inicio" id="txti" min="0"></p>
+            <p>Fim: <input type="number" name="fim" id="txtf" min="0"></p>
+            <p>Passo: <input type="number" name="passo" id="txtp" min="0"></p>
+            <p><input type="submit" value="Contar" id="btn" onclick="contar()"></p>
         </div>
-        <div>
-
+        <div id="res">
+            Preparando Contagem...
         </div>
     </section>
     <footer>

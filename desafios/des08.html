@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        button {
+            font-size: 1em;
+            text-align: center;
+            width: 100px;
+            height: 50px;
+            margin-bottom: 21.4px;
+        }
+    </style>
+    <title>Desconto</title>
+</head>
+<body>
+    <h1>Calcular Desconto</h1>
+    <button onclick="clicou()">10% de Desconto</button><br>
+    <div id="res">
+        Clique no botão acima para iniciar.
+    </div>
+    <!-- JavaScript -->
+    <script>    
+        function clicou() {
+            var res = document.getElementById('res')
+            var btn = document.getElementsByTagName('button')[0]
+            var prod = prompt('Qual é o produto que você está comprando?')
+            var preco = Number(prompt(`Qual é o preço do ${prod}?`))
+            var porc = 10/100
+            var valor = porc * preco 
+            var desc = preco - valor
+
+            res.innerHTML = `<h2>Calculando desconto de 10% para ${prod}</h2>
+            <p>O preço original era <strong>R$ ${preco.toFixed(2).replace('.',',')}</strong></p>
+            <p>Você economizou <strong>R$ ${valor.toFixed(2).replace('.',',')}</strong> de desconto (-10%)</p>
+            <p>No fim, você vai pagar R$ ${desc.toFixed(2).replace('.',',')} no produto <strong>${prod}</strong>.</p>`
+        }
+    </script>
+</body>
+</html>

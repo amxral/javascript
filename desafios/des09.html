@@ -37,12 +37,12 @@
 
             if (salt > sal) { 
             res.innerHTML = `<h2>${nome} recebeu um aumento salarial!</h2>
-            <p>O salário ataul era de <strong>${sal.toLocaleString('pt-BR',{style:'currency', currency: 'BRL'})}.</strong></p>
+            <p>O salário atual era de <strong>${sal.toLocaleString('pt-BR',{style:'currency', currency: 'BRL'})}.</strong></p>
             <p>Com um aumento de <strong>${reag}%</strong>, o salário vai aumentar <strong>${tt.toLocaleString('pt-BR',{style:'currency', currency: 'BRL'})}</<p></strong> no próximo mês.</p>
             <p>E a partir daí, ${nome} vai passar a ganhar <strong>${salt.toLocaleString('pt-BR',{style:'currency', currency: 'BRL'})}</strong></p>`
             } else {
                 res.innerHTML = `<h2>${nome} teve o salário diminuído!</h2>
-                <p>O salário ataul era de <strong>${sal.toLocaleString('pt-BR',{style:'currency', currency: 'BRL'})}.</strong></p>
+                <p>O salário atual era de <strong>${sal.toLocaleString('pt-BR',{style:'currency', currency: 'BRL'})}.</strong></p>
                 <p>Com a diminuição de <strong>${reag}%</strong>, o salário vai diminuir <strong>${tt.toLocaleString('pt-BR',{style:'currency', currency: 'BRL'})}</<p></strong> no próximo mês.</p>
                 <p>E a partir daí, ${nome} vai passar a receber <strong>${salt.toLocaleString('pt-BR',{style:'currency', currency: 'BRL'})}</strong></p>`
             }

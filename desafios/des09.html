@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        button {
+            font-size: 1em;
+            text-align: center;
+            width: 100px;
+            height: 50px;
+            margin-bottom: 21.4px;
+        }
+    </style>
+    <title>Reajuste</title>
+</head>
+<body>
+    <h1>Reajuste salarial</h1>
+    <button onclick="clicou()">Reajuste Salário</button><br>
+    <div id="res">
+        Clique no botão acima para iniciar.
+    </div>
+    <!-- JavaScript -->
+    <script>    
+        function clicou() {
+            let nome = window.prompt('Qual o nome do funcionário?')
+            let sal = Number(prompt(`Qual o salário de ${nome}?`))
+            let reag = Number(prompt(`O salário de ${nome} vai ser reajustado em qual porcentagem?`)) 
+
+            let tt = (sal * reag) / 100;
+            let salt = sal + tt
+            let res = document.getElementById('res')
+
+            if (salt > sal) { 
+            res.innerHTML = `<h2>${nome} recebeu um aumento salarial!</h2>
+            <p>O salário ataul era de <strong>${sal.toLocaleString('pt-BR',{style:'currency', currency: 'BRL'})}.</strong></p>
+            <p>Com um aumento de <strong>${reag}%</strong>, o salário vai aumentar <strong>${tt.toLocaleString('pt-BR',{style:'currency', currency: 'BRL'})}</<p></strong> no próximo mês.</p>
+            <p>E a partir daí, ${nome} vai passar a ganhar <strong>${salt.toLocaleString('pt-BR',{style:'currency', currency: 'BRL'})}</strong></p>`
+            } else {
+                res.innerHTML = `<h2>${nome} teve o salário diminuído!</h2>
+                <p>O salário ataul era de <strong>${sal.toLocaleString('pt-BR',{style:'currency', currency: 'BRL'})}.</strong></p>
+                <p>Com a diminuição de <strong>${reag}%</strong>, o salário vai diminuir <strong>${tt.toLocaleString('pt-BR',{style:'currency', currency: 'BRL'})}</<p></strong> no próximo mês.</p>
+                <p>E a partir daí, ${nome} vai passar a receber <strong>${salt.toLocaleString('pt-BR',{style:'currency', currency: 'BRL'})}</strong></p>`
+            }
+            
+        }
+    </script>
+</body>
+</html>

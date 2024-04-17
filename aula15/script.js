@@ -4,11 +4,9 @@ function juntar() {
     const n2 = document.getElementById('n2').value;
     const res = document.getElementById('res');
 
+    //Transformando string em número
     let num1 = Number(n1);
     let num2 = Number(n2);
-
-    // Soma entre n1 e n2
-    let soma = num1 + num2;
 
     // Resultado 
     res.innerHTML = `${n1}` + `${n2}`;
